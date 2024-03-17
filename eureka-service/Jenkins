@@ -1,5 +1,5 @@
 pipeline{
-    agent { label 'jenkins-agent'}
+    agent { label 'jenkins-aws'}
     tools{
         jdk  'java17'
         maven  'maven3'
@@ -12,7 +12,7 @@ pipeline{
       }    
         stage('Checkout form SCM') {
                 steps{
-                git branch: 'master', credentialsId: 'github', url: 'https://github.com/atulko/matrimony'
+                git branch: 'master', credentialsId: 'github', url: 'https://github.com/atulko/matri'
             }
     }
         stage('Build Application'){
