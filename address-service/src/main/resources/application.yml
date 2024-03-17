@@ -1,0 +1,21 @@
+server:
+  port: 9093
+  error:    whitelabel:      enabled: false
+spring:
+  application:
+    name: address-service
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/matrimony
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+  config:
+    import:
+    - "optional:configserver:http://localhost:8888"
