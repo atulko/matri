@@ -1,4 +1,4 @@
-package com.matri.address.config;
+package com.address.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.loadbalancer.reactive.LoadBalancedExchangeFilterFunction;

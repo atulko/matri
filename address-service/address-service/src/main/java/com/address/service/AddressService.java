@@ -1,12 +1,12 @@
-package com.matri.address.service;
+package com.address.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.matri.address.entity.Address;
-import com.matri.address.repository.AddressRepository;
+import com.address.entity.Address;
+import com.address.repository.AddressRepository;
 
 @Service
 public class AddressService {

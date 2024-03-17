@@ -1,0 +1,24 @@
+server:
+  port: 9093
+  error:
+    whitelabel:
+      enabled: false
+spring:
+  application:
+    name: address-service
+  datasource:
+    #driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://aws-jenkins.cbyd3rohuh5k.us-east-1.rds.amazonaws.com:3306/matrimony
+    username: root
+    password: kits4ATUL*
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+   # properties:
+    #  hibernate:
+     #   dialect: org.hibernate.dialect.MySQL8Dialect
+ # config:
+  #  import:
+   # - "optional:configserver:http://localhost:8888"    database-platform: org.hibernate.dialect.MySQL8Dialect
+    properties:      max_allowed_packet: 2000

@@ -1,7 +1,23 @@
-package com.matri.address.response;
+package com.address.entity;
 
-public class AddressResponse {
+import java.io.Serializable;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@JsonIgnoreProperties({ "hibernateLazyInitializer" })
+@Entity
+@Table(name = "address")
+public class Address extends Object implements Serializable {
+
+	private static final long serialVersionUID = -7693438653090945983L;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int addressId;
 	private int flatNumber;
 	private String landMark;
@@ -11,6 +27,29 @@ public class AddressResponse {
 	private int pinNumber;
 	private String country;
 	private int isEnable;
+
+	public Address() {
+		super();
+
+	}
+
+	public Address(int addressId, int flatNumber, String landMark, String city, String district, String state,
+			int pinNumber, String country, int isEnable) {
+		super();
+		this.addressId = addressId;
+		this.flatNumber = flatNumber;
+		this.landMark = landMark;
+		this.city = city;
+		this.district = district;
+		this.state = state;
+		this.pinNumber = pinNumber;
+		this.country = country;
+		this.isEnable = isEnable;
+
+	}
+
+	// @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	// @JoinColumn(name = "customer_id", referencedColumnName = "addressId")
 
 	public int getAddressId() {
 		return addressId;
